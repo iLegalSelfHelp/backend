@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Dev">
+    <output-path>$PROJECT_DIR$/WebContent</output-path>
+    <root id="archive" name="Dev.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Dev" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/Downloads/servlet-3_0-final-jar_and_schema/javax.servlet.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-20140107.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/json-simple-1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/pdfbox-app-2.0.3.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Dev/web/Web" />
+    </root>
+  </artifact>
+</component>
