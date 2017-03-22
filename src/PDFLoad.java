@@ -58,7 +58,8 @@ public class PDFLoad extends HttpServlet {
 		int docID = -1;
 		
 		Part pdfPart = request.getPart("PDF");
-		String defaultFileName = pdfPart.getName().substring(0,pdfPart.getName().lastIndexOf("."));
+//		String defaultFileName = pdfPart.getName().substring(0,pdfPart.getName().lastIndexOf("."));
+		String defaultFileName = pdfPart.getHeader("content-disposition");
 		String pdfFileName = !request.getParameter("FILENAME").equals("")?request.getParameter("FILENAME"):defaultFileName;
 		String pdfCategory = request.getParameter("CATEGORY");
 		
