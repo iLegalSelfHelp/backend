@@ -100,13 +100,14 @@ public class FillPDF extends HttpServlet {
 				Class.forName("org.apache.pdfbox.pdmodel.PDDocument");
 				truePDF = PDDocument.load(pdfDoc);
 				String pdfTitle = fileLocation.substring(fileLocation.lastIndexOf("/")+1);
+				// error line
 				String pdfLoc = HelperFunctions.listFields(truePDF,pdfFieldData,pdfTitle,request.getParameter(pdfIDKey));
-				
+
 				
 				Class.forName("com.mysql.jdbc.Driver");
 				dbConn = DriverManager.getConnection(serverURL, "root", "Trojans17");
 				PreparedStatement newFilledPDFStatement = (PreparedStatement) dbConn.prepareStatement(sqlQuery);
-				
+
 				newFilledPDFStatement.setString(1, pdfTitle);
 				int uid = -1;
 				if(request.getParameter(userIDKey) != null ){
@@ -122,7 +123,7 @@ public class FillPDF extends HttpServlet {
 				successful = false;
 				e1.printStackTrace();
 			}catch (Exception e) {
-				errMessage = "EEEEE"+e.getMessage();
+				errMessage = "EEEEE"+ e + "    " + e.getMessage();
 				successful = false;
 				e.printStackTrace();
 			}
